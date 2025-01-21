@@ -1,0 +1,77 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #fff6d7;
+}
+
+div {
+    margin: auto;
+    text-align: center;
+    padding: 8px;
+}
+
+
+img {
+    border-radius: 10px;
+    vertical-align: middle;
+    max-width: 90%;
+    flex-grow: 1; 
+    justify-self: center;
+}
+
+/*top bar section*/
+#topBar {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    background-color: #ff6969;
+    position: fixed;
+}
+
+a {
+    margin: 10px;
+}
+
+h1, h2, p {
+    text-align: center;
+    color: rgb(206, 28, 28);
+}
+
+#logo {
+    display: inline;
+    vertical-align: middle;
+    margin-left: 30px;
+    letter-spacing: 0.55em;
+}
+
+#topBar a {
+    float: right;
+    text-align: center;
+    margin-top: -15px;
+}
+
+/*catalogue section*/
+#catalogue {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.catalogueProduct {
+    background-color: #dc2323;
+    border-radius: 20px;
+    display: grid;
+    margin: 10px;
+    flex: 1;
+}
+
+h3 {
+    color: whitesmoke;
+    margin: 5px 0 0 0;
+    align-self: flex-end;
+    display: block;
+}
