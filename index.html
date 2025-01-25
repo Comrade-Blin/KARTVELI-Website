@@ -12,19 +12,19 @@
   <body>
     <div id="topBar">
       <!--top menu part-->
-      <div>
+      <div style="padding: 0;">
         <img src="Images/KARTVELI Logo for real for real.png" alt="KARTVELI Logo" width="100px">
         <h1 id="logo" style="color: whitesmoke;">KARTVELI</h1>
       </div>
 
-      <div style="margin: 0 auto 0 auto;">
-        <h2 style="color: whitesmoke;">Contact Us</h2>
-        <div style="display: flex; justify-content: center;">
+      <div style="margin: 0 auto 0 auto; padding: 0;">
+        <h2 style="color: whitesmoke; margin: 15px 0 15px 0;">Contact Us</h2>
+        <div style="display: flex; justify-content: space-around;">
           <a href="https://wa.me/6287832535745" target="_blank">
-            <img src="Images/whatsappbw.png" alt="WhatsApp" style="height: 35px;">
+            <img src="Images/whatsappbw.png" alt="WhatsApp" style="height: 35px; filter: invert(1);">
           </a>
           <a href="https://www.instagram.com/kartveli.id?igsh=Y2J6dm03NHppMDV0&utm_source=qr" target="_blank">
-            <img src="Images/instagrambw.png" alt="Instagram" style="height: 30px; border-radius: 0;">
+            <img src="Images/instagrambw.png" alt="Instagram" style="height: 30px; border-radius: 0; filter: invert(1);">
           </a>
         </div>
       </div>
@@ -36,7 +36,7 @@
       <br><br><br><br><br><br><br><br><br>
   
       <div id="aboutUs" style="width: 50%; background-color: #ffcece; border-radius: 20px;">
-        <h1 style="color: #dc2323;">Together in every thread</h1>
+        <h1>Together in every thread</h1>
         <p>
           Introducing Kartveli&#39;s new line! Thoughtfully crafted in every stitch, 
           our yarn bracelets feature heart and flower patterns can elevate your 
@@ -44,23 +44,95 @@
         </p>
       </div>
 
-      <div>
-        <h1>Our Catalogue</h1>
-        <div id="catalogue">
-          <div class="catalogueProduct">
-            <img src="Images/dqs.jpeg" alt="Heartstrings" />
-            <h3>Heartstrings</h3>
-          </div>
-          <div class="catalogueProduct">
-            <img src="Images/dqm.webp" alt="Blossom Trail" />
-            <h3>Blossom Trail</h3>
-          </div>
-          <div class="catalogueProduct">
-            <img src="Images/ryoshu.webp" alt="Flower Buds" />
-            <h3>Flower Buds</h3>
-          </div>
-        </div> <!--catalogue part end-->
-      </div>
    
+      <h1>Our Catalogue</h1> <!--catalogue section start-->
+
+      <div id="catalogue">
+        <div class="catalogueProduct">
+          <img src="Images/dqs.jpeg" alt="Heartstrings" />
+          <h3>Heartstrings</h3>
+
+          <br>
+
+          <button type="button" onclick="subtractBuyNumber('itemCounter1')">&#40;-&#41;</button>
+          <p id="itemCounter1" class="itemCounters">0</p>
+          <button type="button" onclick="addBuyNumber('itemCounter1')">
+            &#40;+&#41;
+          </button>
+
+          <br><br>
+
+        </div>
+        <div class="catalogueProduct">
+          <img src="Images/dqm.webp" alt="Blossom Trail" />
+          <h3>Blossom Trail</h3>
+
+          <br>
+
+          <button type="button" onclick="subtractBuyNumber('itemCounter2')">&#40;-&#41;</button>
+          <p id="itemCounter2" class="itemCounters">0</p>
+          <button type="button" onclick="addBuyNumber('itemCounter2')">&#40;+&#41;</button>
+
+          <br><br>
+
+        </div>
+        <div class="catalogueProduct">
+          <img src="Images/ryoshu.webp" alt="Flower Buds" />
+          <h3>Flower Buds</h3>
+
+          <br>
+          
+          <button type="button" onclick="subtractBuyNumber('itemCounter3')">&#40;-&#41;</button>
+          <p id="itemCounter3" class="itemCounters">0</p>
+          <button type="button" onclick="addBuyNumber('itemCounter3')">&#40;+&#41;</button>
+
+          <br><br>
+
+        </div>
+      </div> <!--catalogue part end-->
+  
+
+
+      <div id="totalPriceBar">
+        <p id="totalPriceNumber">0</p>
+      </div>
   </body>
+
+
+
+  <script>
+    function addBuyNumber(n) {
+      let number = document.getElementById(n).textContent;
+
+       number = ++number;
+       if (number > 98) {number = 99};
+       document.getElementById(n).textContent = number;
+    }
+
+    function subtractBuyNumber(n) {
+      let number = document.getElementById(n).textContent;
+
+       number = --number;
+       if (number < 1) {number = 0};
+       document.getElementById(n).textContent = number;
+    }
+
+    let totalPrice = 0;
+    function totalPriceValue() {
+      let price1 = (document.getElementById('itemCounter1').textContent * 30000);
+      let price2 = (document.getElementById('itemCounter2').textContent * 35000);
+      let price3 = (document.getElementById('itemCounter3').textContent * 25000);
+      let totalPrice = (price1 + price2 + price3);
+
+      if (totalPrice > 0) {document.getElementById("totalPriceBar").style.display = "flex";}
+      else {document.getElementById("totalPriceBar").style.display = "none";}
+     
+      document.getElementById("totalPriceNumber").textContent = ("Your total price is Rp" + totalPrice);
+    }
+
+    document.addEventListener("click", totalPriceValue);
+
+    console.log(totalPrice);
+    
+  </script>
 </html>
