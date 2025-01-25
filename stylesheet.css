@@ -24,20 +24,16 @@ img {
     display: flex;
     justify-content: space-between;
     width: 100%;
-    height: auto;
+    height: 100px;
     margin: 0;
     padding: 0;
-    background-color: #ff6969;
+    background-color: #ffb3b3;
     position: fixed;
 }
 
-a {
-    margin: 10px;
-}
-
-h1, h2, p {
-    text-align: center;
+h1, h2, p #aboutUs {
     color: rgb(206, 28, 28);
+    text-align: center;
 }
 
 #logo {
@@ -57,14 +53,13 @@ h1, h2, p {
 #catalogue {
     display: flex;
     justify-content: space-around;
-    width: 100%;
     flex-wrap: wrap;
 }
 
 .catalogueProduct {
     background-color: #dc2323;
     border-radius: 20px;
-    display: grid;
+    display: block;
     margin: 10px;
     flex: 1;
 }
@@ -74,4 +69,34 @@ h3 {
     margin: 5px 0 0 0;
     align-self: flex-end;
     display: block;
+}
+
+button {
+    background-color: whitesmoke;
+    width: 10%;
+    max-height: 5%;
+    border-radius: 10px;
+    border: 0;
+}
+
+button:hover {
+      background-color: #551d1d;
+      color: #f4cbcb;
+}
+
+.itemCounters {
+    display: inline; 
+    color: whitesmoke; 
+    margin: 0 5% 0 5%;
+}
+
+/*price bar section*/
+#totalPriceBar {
+    display: none;
+    height: 50px;
+    justify-content: flex-end;
+    padding: 0;
+    background-color: #ffb3b3;
+    position: sticky;
+    bottom: 0;
 }
