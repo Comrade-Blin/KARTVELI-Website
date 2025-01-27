@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Kartveli Webpage</title>
+    <title>Kartveli official</title>
     <link rel="stylesheet" href="stylesheet.css" />
   </head>
 
@@ -30,14 +30,11 @@
       </div>
     </div> <!--top menu end-->
 
-<br>
 
-    
-      <br><br><br><br><br><br><br><br><br>
-  
-      <div id="aboutUs" style="width: 50%; background-color: #ffcece; border-radius: 20px;">
+
+      <div id="aboutUs" style="width: 50%; background-color: #ffcece; border-radius: 20px; padding: 20px; margin-top: 30px;">
         <h1>Together in every thread</h1>
-        <p>
+        <p style="color: #9f2c2c;">
           Introducing Kartveli&#39;s new line! Thoughtfully crafted in every stitch, 
           our yarn bracelets feature heart and flower patterns can elevate your 
           everyday look.
@@ -54,11 +51,11 @@
 
           <br>
 
-          <button type="button" onclick="subtractBuyNumber('itemCounter1')">&#40;-&#41;</button>
-          <p id="itemCounter1" class="itemCounters">0</p>
-          <button type="button" onclick="addBuyNumber('itemCounter1')">
-            &#40;+&#41;
-          </button>
+          <div class="itemCounters">
+            <button type="button" class="buttonMinus" onclick="subtractBuyNumber('itemCounter1')">-</button>
+            <p id="itemCounter1" class="itemCounters">0</p>
+            <button type="button" class="buttonPlus" onclick="addBuyNumber('itemCounter1')">+</button>
+          </div>
 
           <br><br>
 
@@ -68,10 +65,12 @@
           <h3>Blossom Trail</h3>
 
           <br>
-
-          <button type="button" onclick="subtractBuyNumber('itemCounter2')">&#40;-&#41;</button>
-          <p id="itemCounter2" class="itemCounters">0</p>
-          <button type="button" onclick="addBuyNumber('itemCounter2')">&#40;+&#41;</button>
+          <div class="itemCounters">
+            <button type="button" class="buttonMinus" onclick="subtractBuyNumber('itemCounter2')">-</button>
+            <p id="itemCounter2" class="itemCounters">0</p>
+            <button type="button" class="buttonPlus" onclick="addBuyNumber('itemCounter2')">+</button>
+          </div>
+          
 
           <br><br>
 
@@ -82,18 +81,37 @@
 
           <br>
           
-          <button type="button" onclick="subtractBuyNumber('itemCounter3')">&#40;-&#41;</button>
-          <p id="itemCounter3" class="itemCounters">0</p>
-          <button type="button" onclick="addBuyNumber('itemCounter3')">&#40;+&#41;</button>
+          <div class="itemCounters">
+            <button type="button" class="buttonMinus" onclick="subtractBuyNumber('itemCounter3')">-</button>
+            <p id="itemCounter3" class="itemCounters">0</p>
+            <button type="button" class="buttonPlus" onclick="addBuyNumber('itemCounter3')">+</button>
+          </div>
 
           <br><br>
 
         </div>
       </div> <!--catalogue part end-->
   
+      <div style="display: flex; justify-content: center;"> <!--form part start-->
+        <form method="post" style="display: none;" id="submissionForm" name="formSubmission"
+        action="">
+          <label for="yourName" style="color: whitesmoke;"><strong>Your Name</strong></label> 
 
+          <br><br>
 
-      <div id="totalPriceBar">
+          <input type="text" name="name" id="yourName" placeholder="Input your name here" >
+          <input type="submit" value="Submit!" id="submitButton">
+
+          <input type="text" name="totalprice" id="totalOrderPrice" style="display: none;" value="">
+          <input type="text" name="price1" id="orderPrice1" style="display: none;" value="">
+          <input type="text" name="price2" id="orderPrice2" style="display: none;" value="">
+          <input type="text" name="price3" id="orderPrice3" style="display: none;" value="">
+        </form>  
+      </div>
+    
+
+      <div id="totalPriceBar"> <!--price bar section start-->
+        <button type="button" id="orderSubmit" style="height: 80%; border-radius: 20px;">Submit your order!</button>
         <p id="totalPriceNumber">0</p>
       </div>
   </body>
@@ -117,8 +135,9 @@
        document.getElementById(n).textContent = number;
     }
 
-    let totalPrice = 0;
-    function totalPriceValue() {
+
+    /*price calculator section*/
+    document.addEventListener('click', function () {
       let price1 = (document.getElementById('itemCounter1').textContent * 30000);
       let price2 = (document.getElementById('itemCounter2').textContent * 35000);
       let price3 = (document.getElementById('itemCounter3').textContent * 25000);
@@ -128,11 +147,29 @@
       else {document.getElementById("totalPriceBar").style.display = "none";}
      
       document.getElementById("totalPriceNumber").textContent = ("Your total price is Rp" + totalPrice);
-    }
 
-    document.addEventListener("click", totalPriceValue);
+      document.getElementById("totalOrderPrice").setAttribute("value", totalPrice);
+      document.getElementById("orderPrice1").setAttribute("value", price1);
+      document.getElementById("orderPrice2").setAttribute("value", price2);
+      document.getElementById("orderPrice3").setAttribute("value", price3);
+    }) 
 
-    console.log(totalPrice);
-    
+    document.getElementById("orderSubmit").addEventListener('click', function () {
+      document.getElementById("submissionForm").style.display = "flex";
+    })
+
+
+    /*page returner section; full disclaimer: everything is taken from https://www.youtube.com/watch?v=jdIntB1J-i8*/
+    const scriptURL = "https://script.google.com/macros/s/AKfycbycsoOPSzO2k7MhBuPoJXST0XOrzZn7hUg9m4iDHihOJo7mutfDFU9KEQiBtc3_kWmW/exec";
+    const form = document.forms['formSubmission'];
+
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+
+      fetch(scriptURL, {method: 'POST', body: new FormData(form)})
+      .then(response => alert("Thank you for your order!"))
+      .then(() => {window.location.reload();})
+      .catch(error => console.error('Error!', error.message))
+    })
   </script>
 </html>
