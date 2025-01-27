@@ -1,7 +1,12 @@
+* {
+    font-family: "Georgia", serif;
+}
+
 body {
     margin: 0;
     padding: 0;
     background-color: #fff6d7;
+    text-align: center;
 }
 
 div {
@@ -10,6 +15,9 @@ div {
     padding: 8px;
 }
 
+p {
+    margin: 0;
+}
 
 img {
     border-radius: 10px;
@@ -28,7 +36,8 @@ img {
     margin: 0;
     padding: 0;
     background-color: #ffb3b3;
-    position: fixed;
+    position: sticky;
+    top: 0;
 }
 
 h1, h2, p #aboutUs {
@@ -73,9 +82,6 @@ h3 {
 
 button {
     background-color: whitesmoke;
-    width: 10%;
-    max-height: 5%;
-    border-radius: 10px;
     border: 0;
 }
 
@@ -84,10 +90,31 @@ button:hover {
       color: #f4cbcb;
 }
 
+.buttonMinus, .buttonPlus {
+    min-width: 30%;
+    height: 100%;
+}
+
+.buttonMinus {
+    border-radius: 5px 0 0 5px;
+}
+
+.buttonPlus {
+    border-radius: 0 5px 5px 0;
+}
+
 .itemCounters {
-    display: inline; 
-    color: whitesmoke; 
-    margin: 0 5% 0 5%;
+    display: flex;
+    width: fit-content;
+    height: 2%;
+    gap: 0 10px;
+    padding: 0;
+    justify-content: space-around;
+    align-items: center;
+    color: whitesmoke;
+    background-color: #551d1d;
+    border-radius: 5px;
+    font-size: 0.9em;
 }
 
 /*price bar section*/
@@ -95,8 +122,20 @@ button:hover {
     display: none;
     height: 50px;
     justify-content: flex-end;
-    padding: 0;
+    gap: 0 60px;
+    align-items: center;
+    padding: 0 60px 0 0;
     background-color: #ffb3b3;
     position: sticky;
     bottom: 0;
+}
+
+/*form section*/
+form {
+    margin: auto;
+    position: fixed;
+    top: 80px;
+    padding: 50px;
+    background-color: #ffb3b3;
+    border-radius: 20px;
 }
