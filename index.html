@@ -14,11 +14,11 @@
       <!--top menu part-->
       <div style="padding: 0;">
         <img src="Images/KARTVELI Logo for real for real.png" alt="KARTVELI Logo" width="100px">
-        <h1 id="logo" style="color: whitesmoke;">KARTVELI</h1>
+        <h1 id="logo">KARTVELI</h1>
       </div>
 
       <div style="margin: 0 auto 0 auto; padding: 0;">
-        <h2 style="color: whitesmoke; margin: 15px 0 15px 0;">Contact Us</h2>
+        <h2 style="margin: 15px 0 15px 0;">Contact Us</h2>
         <div style="display: flex; justify-content: space-around;">
           <a href="https://wa.me/6287832535745" target="_blank">
             <img src="Images/whatsappbw.png" alt="WhatsApp" style="height: 35px; filter: invert(1);">
@@ -32,7 +32,7 @@
 
 
 
-      <div id="aboutUs" style="width: 50%; background-color: #ffcece; border-radius: 20px; padding: 20px; margin-top: 30px;">
+      <div id="aboutUs">
         <h1>Together in every thread</h1>
         <p style="color: #9f2c2c;">
           Introducing Kartveli&#39;s new line! Thoughtfully crafted in every stitch, 
@@ -42,14 +42,16 @@
       </div>
 
    
-      <h1>Our Catalogue</h1> <!--catalogue section start-->
+      <h1 style="margin: 1.5em auto 0.5em auto;">Our Catalogue</h1> <!--catalogue section start-->
 
       <div id="catalogue">
         <div class="catalogueProduct">
-          <img src="Images/dqs.jpeg" alt="Heartstrings" />
+          <div class="slidesContainer">
+            <img src="Images/ryoshu.webp" alt="Heartstrings 1" class="slidesImage1 activeSlidesImage1"/>
+            <img src="Images/dqm.webp" alt="Heartstrings 2" class="slidesImage1"/>
+            <img src="Images/dqs.jpeg" alt="Heartstrings 3" class="slidesImage1"/>
+          </div>
           <h3>Heartstrings</h3>
-
-          <br>
 
           <div class="itemCounters">
             <button type="button" class="buttonMinus" onclick="subtractBuyNumber('itemCounter1')">-</button>
@@ -57,29 +59,31 @@
             <button type="button" class="buttonPlus" onclick="addBuyNumber('itemCounter1')">+</button>
           </div>
 
-          <br><br>
 
         </div>
         <div class="catalogueProduct">
-          <img src="Images/dqm.webp" alt="Blossom Trail" />
+          <div class="slidesContainer">
+            <img src="Images/dqm.webp" alt="Blossom Trail 1" class="slidesImage2 activeSlidesImage2"/>
+            <img src="Images/dqs.jpeg" alt="Blossom Trail 2" class="slidesImage2"/>
+            <img src="Images/ryoshu.webp" alt="Blossom Trail 3" class="slidesImage2"/>
+          </div>
           <h3>Blossom Trail</h3>
 
-          <br>
           <div class="itemCounters">
             <button type="button" class="buttonMinus" onclick="subtractBuyNumber('itemCounter2')">-</button>
             <p id="itemCounter2" class="itemCounters">0</p>
             <button type="button" class="buttonPlus" onclick="addBuyNumber('itemCounter2')">+</button>
           </div>
-          
 
-          <br><br>
 
         </div>
         <div class="catalogueProduct">
-          <img src="Images/ryoshu.webp" alt="Flower Buds" />
+          <div class="slidesContainer">
+            <img src="Images/dqs.jpeg" alt="Flower Buds 1" class="slidesImage3 activeSlidesImage3"/>
+            <img src="Images/ryoshu.webp" alt="Flower Buds 2" class="slidesImage3"/>
+            <img src="Images/dqm.webp" alt="Flower Buds 3" class="slidesImage3"/>
+          </div>
           <h3>Flower Buds</h3>
-
-          <br>
           
           <div class="itemCounters">
             <button type="button" class="buttonMinus" onclick="subtractBuyNumber('itemCounter3')">-</button>
@@ -87,12 +91,10 @@
             <button type="button" class="buttonPlus" onclick="addBuyNumber('itemCounter3')">+</button>
           </div>
 
-          <br><br>
-
         </div>
       </div> <!--catalogue part end-->
   
-      <div style="display: flex; justify-content: center;"> <!--form part start-->
+      <div style="top: 70px; position: fixed; width: 100%;"> <!--form part start-->
         <form method="post" style="display: none;" id="submissionForm" name="formSubmission"
         action="">
           <label for="yourName" style="color: whitesmoke;"><strong>Your Name</strong></label> 
@@ -115,6 +117,10 @@
         <p id="totalPriceNumber">0</p>
       </div>
   </body>
+
+
+
+
 
 
 
@@ -154,12 +160,40 @@
       document.getElementById("orderPrice3").setAttribute("value", price3);
     }) 
 
+
+    /*form opener section*/
     document.getElementById("orderSubmit").addEventListener('click', function () {
-      document.getElementById("submissionForm").style.display = "flex";
+      document.getElementById("submissionForm").style.display = "block";
+    })
+
+    document.addEventListener('click', function () {
+      if (document.getElementById('totalPriceBar').style.display === "none") {
+        document.getElementById('submissionForm').style.display = "none";
+      }
     })
 
 
-    /*page returner section; full disclaimer: everything is taken from https://www.youtube.com/watch?v=jdIntB1J-i8*/
+    /*slideshow section -----------------------------------------------------------------------------------*/
+    let activeSlide = 1;
+
+    setInterval(slideshow, 3000, "slidesImage1", "activeSlidesImage1");
+    setInterval(slideshow, 3000, "slidesImage2", "activeSlidesImage2");
+    setInterval(slideshow, 3000, "slidesImage3", "activeSlidesImage3");
+    setInterval(() => {++activeSlide;}, 3000);
+
+    function slideshow(nthSlide, nthActiveSlide) {
+      const slideNumber = document.getElementsByClassName(nthSlide);
+      const slideLength = slideNumber.length;
+
+      slideNumber[activeSlide % slideLength].setAttribute("class", nthSlide + " " + nthActiveSlide);
+      
+      if (activeSlide % slideLength > 0) {slideNumber[activeSlide % slideLength - 1].setAttribute("class", nthSlide)}
+      else {slideNumber[slideLength - 1].setAttribute("class", nthSlide)};
+    }
+
+
+    /*page returner section. DISCLAIMER: this section (including the script used in Excel to catalogue the purchases)
+    is entirely taken from https://www.youtube.com/watch?v=jdIntB1J-i8*/
     const scriptURL = "https://script.google.com/macros/s/AKfycbycsoOPSzO2k7MhBuPoJXST0XOrzZn7hUg9m4iDHihOJo7mutfDFU9KEQiBtc3_kWmW/exec";
     const form = document.forms['formSubmission'];
 
