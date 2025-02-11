@@ -3,8 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Kartveli official</title>
-    <link rel="stylesheet" href="stylesheet.css" />
+    <title>Kartveli Official</title>
+    <link rel="stylesheet" href="stylesheet.css"/>
+    <link rel="prev" href="payment.html">
   </head>
 
 
@@ -12,16 +13,16 @@
   <body>
     <div id="topBar">
       <!--top menu part-->
-      <div style="padding: 0;">
+      <div>
         <img src="Images/KARTVELI Logo for real for real.png" alt="KARTVELI Logo" width="100px">
-        <h1 id="logo">KARTVELI</h1>
+        <h1 id="logo">Kartveli</h1>
       </div>
 
-      <div style="margin: 0 auto 0 auto; padding: 0;">
+      <div id="contactUs">
         <h2 style="margin: 15px 0 15px 0;">Contact Us</h2>
-        <div style="display: flex; justify-content: space-around;">
+        <div>
           <a href="https://wa.me/6287832535745" target="_blank">
-            <img src="Images/whatsappbw.png" alt="WhatsApp" style="height: 35px; filter: invert(1);">
+            <img src="Images/whatsapplogobw.png" alt="WhatsApp" style="height: 30px; border-radius: 0; filter: invert(1);">
           </a>
           <a href="https://www.instagram.com/kartveli.id?igsh=Y2J6dm03NHppMDV0&utm_source=qr" target="_blank">
             <img src="Images/instagrambw.png" alt="Instagram" style="height: 30px; border-radius: 0; filter: invert(1);">
@@ -34,17 +35,33 @@
 
       <div id="aboutUs">
         <h1>Together in every thread</h1>
-        <p style="color: #9f2c2c;">
+        <p>
           Introducing Kartveli&#39;s new line! Thoughtfully crafted in every stitch, 
-          our yarn bracelets feature heart and flower patterns can elevate your 
+          our yarn bracelets featuring heart and flower patterns can elevate your 
           everyday look.
         </p>
+        <button type="button" id="dropdownButton" style="font-size: 1em;">What is Kartveli?</button>
+        <div id="aboutUsDropdown" style="display: none;">
+          <p>Kartveli is a group based on the country Georgia. Georgian fabric is a centuries-long 
+            tradition that contains both the history and natural beauty of the nation. Our products
+            seek to imitate that very same artistry, which is only made possible by our members:
+            <ul>
+              <li><strong>Clarissa Helga Artanti</strong> (master of yarn)</li>
+              <li><strong>Kennis Soleil Sarumpaet</strong> (bracelet maker)</li>
+              <li><strong>Puti Dania</strong> (bracelet maker)</li>
+              <li><strong>Rama Daniswara</strong> (resident sheep)</li>
+              <li><strong>Ryuchi Naiya Kamil Rosadi</strong> (programmer)</li>
+              <li><strong>Syareva Reimara Syam</strong> (bracelet maker)</li>
+            </ul>
+          </p>
+        </div>
       </div>
+
 
    
       <h1 style="margin: 1.5em auto 0.5em auto;">Our Catalogue</h1> <!--catalogue section start-->
 
-      <div id="catalogue">
+      <div class="catalogue">
         <div class="catalogueProduct">
           <div class="slidesContainer">
             <img src="Images/ryoshu.webp" alt="Heartstrings 1" class="slidesImage1 activeSlidesImage1"/>
@@ -52,15 +69,16 @@
             <img src="Images/dqs.jpeg" alt="Heartstrings 3" class="slidesImage1"/>
           </div>
           <h3>Heartstrings</h3>
+          <h4>Rp30.000</h4>
 
           <div class="itemCounters">
             <button type="button" class="buttonMinus" onclick="subtractBuyNumber('itemCounter1')">-</button>
             <p id="itemCounter1" class="itemCounters">0</p>
             <button type="button" class="buttonPlus" onclick="addBuyNumber('itemCounter1')">+</button>
           </div>
-
-
         </div>
+
+
         <div class="catalogueProduct">
           <div class="slidesContainer">
             <img src="Images/dqm.webp" alt="Blossom Trail 1" class="slidesImage2 activeSlidesImage2"/>
@@ -68,15 +86,16 @@
             <img src="Images/ryoshu.webp" alt="Blossom Trail 3" class="slidesImage2"/>
           </div>
           <h3>Blossom Trail</h3>
+          <h4>Rp25.000</h4>
 
           <div class="itemCounters">
             <button type="button" class="buttonMinus" onclick="subtractBuyNumber('itemCounter2')">-</button>
             <p id="itemCounter2" class="itemCounters">0</p>
             <button type="button" class="buttonPlus" onclick="addBuyNumber('itemCounter2')">+</button>
           </div>
-
-
         </div>
+
+
         <div class="catalogueProduct">
           <div class="slidesContainer">
             <img src="Images/dqs.jpeg" alt="Flower Buds 1" class="slidesImage3 activeSlidesImage3"/>
@@ -84,37 +103,77 @@
             <img src="Images/dqm.webp" alt="Flower Buds 3" class="slidesImage3"/>
           </div>
           <h3>Flower Buds</h3>
+          <h4>Rp20.000</h4>
           
           <div class="itemCounters">
             <button type="button" class="buttonMinus" onclick="subtractBuyNumber('itemCounter3')">-</button>
             <p id="itemCounter3" class="itemCounters">0</p>
             <button type="button" class="buttonPlus" onclick="addBuyNumber('itemCounter3')">+</button>
           </div>
-
         </div>
-      </div> <!--catalogue part end-->
+      </div> <!--catalogue part 1 end-->
+
+
+
+      <div class="catalogue">
+        <div class="catalogueProduct">
+          <div class="slidesContainer">
+            <img src="Images/dqs.jpeg" alt="Couple 1" class="slidesImage4 activeSlidesImage4"/>
+            <img src="Images/ryoshu.webp" alt="Couple 2" class="slidesImage4"/>
+            <img src="Images/dqm.webp" alt="Couple 3" class="slidesImage4"/>
+          </div>
+          <h3>Couple</h3>
+          <h4>Rp50.000</h4>
+          
+          <div class="itemCounters">
+            <button type="button" class="buttonMinus" onclick="subtractBuyNumber('itemCounter4')">-</button>
+            <p id="itemCounter4" class="itemCounters">0</p>
+            <button type="button" class="buttonPlus" onclick="addBuyNumber('itemCounter4')">+</button>
+          </div>
+        </div>
+
+
+        <div class="catalogueProduct">
+          <div class="slidesContainer">
+            <img src="Images/dqs.jpeg" alt="Powerpuff Girls 1" class="slidesImage5 activeSlidesImage5"/>
+            <img src="Images/ryoshu.webp" alt="Powerpuff Girls 2" class="slidesImage5"/>
+            <img src="Images/dqm.webp" alt="Powerpuff Girls 3" class="slidesImage5"/>
+          </div>
+          <h3>Powerpuff Girls</h3>
+          <h4>Rp60.000</h4>
+          
+          <div class="itemCounters">
+            <button type="button" class="buttonMinus" onclick="subtractBuyNumber('itemCounter5')">-</button>
+            <p id="itemCounter5" class="itemCounters">0</p>
+            <button type="button" class="buttonPlus" onclick="addBuyNumber('itemCounter5')">+</button>
+          </div>
+        </div>
+      </div> <!--catalogue part 2 end-->
   
-      <div style="top: 70px; position: fixed; width: 100%;"> <!--form part start-->
+
+
+      <div id="submissionBox"> <!--form part start-->
         <form method="post" style="display: none;" id="submissionForm" name="formSubmission"
         action="">
-          <label for="yourName" style="color: whitesmoke;"><strong>Your Name</strong></label> 
-
-          <br><br>
-
-          <input type="text" name="name" id="yourName" placeholder="Input your name here" >
-          <input type="submit" value="Submit!" id="submitButton">
-
+          <label for="yourName"><strong>Your Name</strong></label>
+          <input type="text" name="name" id="yourName" placeholder="Input your name here" value="">
+          <input type="text" name="notes" id="yourNotes" placeholder="Add optional notes here">
+          <input type="submit" value="Submit!" id="submitButton" style="display: block;">
+          
           <input type="text" name="totalprice" id="totalOrderPrice" style="display: none;" value="">
           <input type="text" name="price1" id="orderPrice1" style="display: none;" value="">
           <input type="text" name="price2" id="orderPrice2" style="display: none;" value="">
           <input type="text" name="price3" id="orderPrice3" style="display: none;" value="">
+          <input type="text" name="price4" id="orderPrice4" style="display: none;" value="">
+          <input type="text" name="price5" id="orderPrice5" style="display: none;" value="">
         </form>  
       </div>
     
 
+
       <div id="totalPriceBar"> <!--price bar section start-->
-        <button type="button" id="orderSubmit" style="height: 80%; border-radius: 20px;">Submit your order!</button>
         <p id="totalPriceNumber">0</p>
+        <button type="button" id="orderSubmit">Submit your order!</button>
       </div>
   </body>
 
@@ -125,6 +184,7 @@
 
 
   <script>
+    /*item number changer section*/
     function addBuyNumber(n) {
       let number = document.getElementById(n).textContent;
 
@@ -142,13 +202,15 @@
     }
 
 
+
     /*price calculator section*/
     document.addEventListener('click', function () {
-      let price1 = (document.getElementById('itemCounter1').textContent * 30000);
-      let price2 = (document.getElementById('itemCounter2').textContent * 35000);
-      let price3 = (document.getElementById('itemCounter3').textContent * 25000);
-      let totalPrice = (price1 + price2 + price3);
-
+      let price1 = document.getElementById('itemCounter1').textContent * 30000; //Heartstrings
+      let price2 = document.getElementById('itemCounter2').textContent * 25000; //Blossom Trail
+      let price3 = document.getElementById('itemCounter3').textContent * 20000; //Flower Buds
+      let price4 = document.getElementById('itemCounter4').textContent * 50000; //Couple
+      let price5 = document.getElementById('itemCounter5').textContent * 60000; //Powerpuff Girls
+      let totalPrice = price1 + price2 + price3 + price4 + price5;
       if (totalPrice > 0) {document.getElementById("totalPriceBar").style.display = "flex";}
       else {document.getElementById("totalPriceBar").style.display = "none";}
      
@@ -158,11 +220,33 @@
       document.getElementById("orderPrice1").setAttribute("value", price1);
       document.getElementById("orderPrice2").setAttribute("value", price2);
       document.getElementById("orderPrice3").setAttribute("value", price3);
+      document.getElementById("orderPrice4").setAttribute("value", price4);
+      document.getElementById("orderPrice5").setAttribute("value", price5);
     }) 
+
+
+
+    /*about us dropdown*/
+    document.getElementById("dropdownButton").addEventListener('click', function () {
+      if (document.getElementById("aboutUsDropdown").style.display == "block") {
+        document.getElementById("aboutUsDropdown").style.display = "none";
+        document.getElementById("dropdownButton").style.fontSize = "1em";
+        document.getElementById("dropdownButton").style.fontWeight = "normal";
+      }
+      else {
+        document.getElementById("aboutUsDropdown").style.display = "block";
+        document.getElementById("dropdownButton").style.fontSize = "2em";
+        document.getElementById("dropdownButton").style.fontWeight = "bold";
+      };
+    })
+
 
 
     /*form opener section*/
     document.getElementById("orderSubmit").addEventListener('click', function () {
+      if (document.getElementById("submissionForm").style.display === "block") {
+        document.getElementById("orderSubmit").style.display = "none"}
+      else {document.getElementById("orderSubmit").style.display = "inline"};
       document.getElementById("submissionForm").style.display = "block";
     })
 
@@ -173,12 +257,15 @@
     })
 
 
-    /*slideshow section -----------------------------------------------------------------------------------*/
+
+    /*slideshow section*/
     let activeSlide = 1;
 
     setInterval(slideshow, 3000, "slidesImage1", "activeSlidesImage1");
     setInterval(slideshow, 3000, "slidesImage2", "activeSlidesImage2");
     setInterval(slideshow, 3000, "slidesImage3", "activeSlidesImage3");
+    setInterval(slideshow, 3000, "slidesImage4", "activeSlidesImage4");
+    setInterval(slideshow, 3000, "slidesImage5", "activeSlidesImage5");
     setInterval(() => {++activeSlide;}, 3000);
 
     function slideshow(nthSlide, nthActiveSlide) {
@@ -192,17 +279,19 @@
     }
 
 
-    /*page returner section. DISCLAIMER: this section (including the script used in Excel to catalogue the purchases)
-    is entirely taken from https://www.youtube.com/watch?v=jdIntB1J-i8*/
-    const scriptURL = "https://script.google.com/macros/s/AKfycbycsoOPSzO2k7MhBuPoJXST0XOrzZn7hUg9m4iDHihOJo7mutfDFU9KEQiBtc3_kWmW/exec";
+
+    /*page returner section. DISCLAIMER: this section (including the script used in Excel to catalogue purchases)
+    is entirely taken from https://www.youtube.com/watch?v=jdIntB1J-i8 */
+    const scriptURL = 
+    "https://script.google.com/macros/s/AKfycbycsoOPSzO2k7MhBuPoJXST0XOrzZn7hUg9m4iDHihOJo7mutfDFU9KEQiBtc3_kWmW/exec";
     const form = document.forms['formSubmission'];
 
     form.addEventListener('submit', e => {
       e.preventDefault();
 
       fetch(scriptURL, {method: 'POST', body: new FormData(form)})
-      .then(response => alert("Thank you for your order!"))
       .then(() => {window.location.reload();})
+      .then(window.open("payment.html", "_blank"))
       .catch(error => console.error('Error!', error.message))
     })
   </script>
