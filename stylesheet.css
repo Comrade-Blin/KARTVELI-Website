@@ -1,5 +1,6 @@
 * {
     font-family: "Georgia", serif;
+    color: #b90a0a;
 }
 
 body {
@@ -12,13 +13,29 @@ body {
 }
 
 div {
-    margin: auto;
+    margin: 0 auto 0 auto;
     text-align: center;
-    padding: 8px;
+    padding: 0;
+}
+
+h1, h2, #aboutUs > p { /*general text subsection*/
+    color: #ce1c1c;
+    text-align: center;
+}
+
+h3, h4 {
+    color: whitesmoke;
+    margin: 0.5em 0 0.3em 0;
+    display: block;
+}
+
+h4 {
+    margin: 0 0 1em 0;
 }
 
 p {
     line-height: 1.5em;
+    color: #b90a0a;
 }
 
 img {
@@ -29,27 +46,44 @@ img {
     justify-self: center;
 }
 
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+img, button, a, .itemCounters > p {
+    user-select: none;
+}
+
+button, #submitButton { /*general button subsection*/
+    background-color: whitesmoke;
+    border: 0;
+    padding: 0 1em 0 1em;
+    border-radius: 1em;
+}
+
+button:hover, #submitButton:hover {
+      background-color: #551d1d;
+      color: #f4cbcb;
+}
+
 /*top bar section*/
 #topBar {
     display: flex;
     justify-content: space-between;
     width: 100%;
-    height: 100px;
+    min-height: 100px;
+    height: fit-content;
     margin: 0;
     padding: 0;
-    background-color: #f9b0b0;
+    background-color: #f9b0b0; /*#ffdfe3*/
     position: sticky;
     top: 0;
     z-index: 2;
 }
 
-h1, h2, p #aboutUs {
-    color: #ce1c1c;
-    text-align: center;
-}
-
 #logo {
-    display: inline;
+    display: inline-block;
     vertical-align: middle;
     margin-left: 30px;
     letter-spacing: 0.55em;
@@ -61,17 +95,41 @@ h1, h2, p #aboutUs {
     margin-top: -15px;
 }
 
+#contactUs > div {
+    display: flex;
+    justify-content: space-evenly;
+}
+
 /*about us section*/
 #aboutUs {
     width: 40%;
-    background-color: #ce1c1c25;
+    background-color: #ce1c1c25; /*#fff9f9*/
     border-radius: 20px;
     padding: 2%;
     margin-top: 30px;
 }
 
+#dropdownButton {
+    border: 0;
+    background-color: #ffffff00;
+    color: #ce1c1c;
+}
+
+#dropdownButton:hover {
+    color: #551d1d;
+}
+
+li {
+    color: #551d1d;
+    font-style: italic;
+}
+
+li > strong {
+    font-style: normal;
+}
+
 /*catalogue section*/
-#catalogue {
+.catalogue {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
@@ -83,28 +141,36 @@ h1, h2, p #aboutUs {
     display: block;
     margin: 10px;
     flex: 1;
+    padding-bottom: 30px;
 }
 
-h3 {
-    color: whitesmoke;
-    margin: 1em 0 1em 0;
-    align-self: flex-end;
-    display: block;
+/*slideshow part*/
+.slidesContainer {
+    visibility: visible;
+    height: 30vw;
+    overflow: hidden;
+    position: relative;
+    margin: 20px;
 }
 
-button {
-    background-color: whitesmoke;
-    border: 0;
+.slidesImage1, .slidesImage2, .slidesImage3, .slidesImage4, .slidesImage5 {
+    position: absolute;
+    inset: 0 0 auto 0;
+    max-height: 100%;
+    opacity: 0;
+    transition: opacity 500ms ease-in-out;
 }
 
-button:hover {
-      background-color: #551d1d;
-      color: #f4cbcb;
+.activeSlidesImage1, .activeSlidesImage2, .activeSlidesImage3, .activeSlidesImage4, .activeSlidesImage5 {
+    opacity: 1;
+    transition: opacity 500ms ease-in-out;
 }
 
+/*item counter section*/
 .buttonMinus, .buttonPlus {
     min-width: 30%;
-    height: 100%;
+    height: 20px;
+    font-weight: 900;
 }
 
 .buttonMinus {
@@ -118,7 +184,7 @@ button:hover {
 .itemCounters {
     display: flex;
     width: fit-content;
-    height: 2%;
+    height: fit-content;
     gap: 0 10px;
     padding: 0;
     justify-content: space-around;
@@ -127,7 +193,7 @@ button:hover {
     background-color: #551d1d;
     border-radius: 5px;
     font-size: 0.9em;
-    margin-bottom: 1em;
+    margin: 0 auto 0 auto;
 }
 
 /*price bar section*/
@@ -143,33 +209,47 @@ button:hover {
     bottom: 0;
 }
 
+#orderSubmit {
+    height: 80%;
+    display: inline;
+}
+
 /*form section*/
 form {
-    margin: auto;
-    padding: 50px;
+    margin: 1em auto 0 auto;
+    padding: 10px;
     background-color: #f9b0b0;
-    border-radius: 20px;
+    border-radius: 0 0 20px 20px;
     width: 15%;
     height: 10%;
 }
 
-/*slideshow part*/
-.slidesContainer {
-    visibility: visible;
-    height: 30vw;
-    overflow: hidden;
-    position: relative;
+#submissionBox {
+    top: 70px;
+    position: fixed;
+    width: 100%;
 }
 
-.slidesImage1, .slidesImage2, .slidesImage3 {
-    position: absolute;
-    inset: 0 0 auto 0;
-    max-height: 100%;
-    opacity: 0;
-    transition: opacity 500ms ease-in-out;
+#submitButton {
+    padding: 0.5em;
 }
 
-.activeSlidesImage1, .activeSlidesImage2, .activeSlidesImage3 {
-    opacity: 1;
-    transition: opacity 500ms ease-in-out;
+input {
+    margin: 0.5em auto 0.5em auto;
+    display: block;
+    max-width: 90%;
+    border-radius: 0.5em;
+}
+
+label {
+    color: whitesmoke;
+    margin: 1em 0 1em 0;
+    display: block;
+}
+
+/*screen fitting section*/
+@media only screen and (max-width: 600px) {
+    #topBar > div > img {
+        display: none;
+    }
 }
