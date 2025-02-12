@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Kartveli Official</title>
+    <title>kartveli Official</title>
     <link rel="stylesheet" href="stylesheet.css"/>
     <link rel="prev" href="payment.html">
   </head>
@@ -14,12 +14,12 @@
     <div id="topBar">
       <!--top menu part-->
       <div>
-        <img src="Images/KARTVELI Logo for real for real.png" alt="KARTVELI Logo" width="100px">
-        <h1 id="logo">Kartveli</h1>
+        <img src="Images/KARTVELI Logo for real for real.png" alt="KARTVELI Logo" id="logoImage">
+        <h1 id="logo">kartveli</h1>
       </div>
 
       <div id="contactUs">
-        <h2 style="margin: 15px 0 15px 0;">Contact Us</h2>
+        <h2>Contact Us</h2>
         <div>
           <a href="https://wa.me/6287832535745" target="_blank">
             <img src="Images/whatsapplogobw.png" alt="WhatsApp" style="height: 30px; border-radius: 0; filter: invert(1);">
@@ -33,25 +33,25 @@
 
 
 
-      <div id="aboutUs">
+      <div class="textBubble">
         <h1>Together in every thread</h1>
         <p>
-          Introducing Kartveli&#39;s new line! Thoughtfully crafted in every stitch, 
+          Introducing kartveli's new line! Thoughtfully crafted in every stitch, 
           our yarn bracelets featuring heart and flower patterns can elevate your 
-          everyday look.
+          everyday look. 
         </p>
         <button type="button" id="dropdownButton" style="font-size: 1em;">What is Kartveli?</button>
         <div id="aboutUsDropdown" style="display: none;">
-          <p>Kartveli is a group based on the country Georgia. Georgian fabric is a centuries-long 
+          <p>kartveli is a group based on the country Georgia. Georgian fabric is a centuries-long 
             tradition that contains both the history and natural beauty of the nation. Our products
             seek to imitate that very same artistry, which is only made possible by our members:
             <ul>
               <li><strong>Clarissa Helga Artanti</strong> (master of yarn)</li>
-              <li><strong>Kennis Soleil Sarumpaet</strong> (bracelet maker)</li>
-              <li><strong>Puti Dania</strong> (bracelet maker)</li>
+              <li><strong>Kennis Soleil Sarumpaet</strong> (big bad wolf)</li>
+              <li><strong>Puti Dania</strong> (bracelet apprentice)</li>
               <li><strong>Rama Daniswara</strong> (resident sheep)</li>
               <li><strong>Ryuchi Naiya Kamil Rosadi</strong> (programmer)</li>
-              <li><strong>Syareva Reimara Syam</strong> (bracelet maker)</li>
+              <li><strong>Syareva Reimara Syam</strong> (bracelet apprentice)</li>
             </ul>
           </p>
         </div>
@@ -64,12 +64,13 @@
       <div class="catalogue">
         <div class="catalogueProduct">
           <div class="slidesContainer">
-            <img src="Images/ryoshu.webp" alt="Heartstrings 1" class="slidesImage1 activeSlidesImage1"/>
+            <img src="Images/hs1.jpg" alt="Heartstrings 1" class="slidesImage1 activeSlidesImage1"/>
             <img src="Images/dqm.webp" alt="Heartstrings 2" class="slidesImage1"/>
             <img src="Images/dqs.jpeg" alt="Heartstrings 3" class="slidesImage1"/>
           </div>
           <h3>Heartstrings</h3>
-          <h4>Rp30.000</h4>
+          <h3>Rp30k</h3>
+          <h4>BUNDLE Rp24k</h4>
 
           <div class="itemCounters">
             <button type="button" class="buttonMinus" onclick="subtractBuyNumber('itemCounter1')">-</button>
@@ -81,12 +82,13 @@
 
         <div class="catalogueProduct">
           <div class="slidesContainer">
-            <img src="Images/dqm.webp" alt="Blossom Trail 1" class="slidesImage2 activeSlidesImage2"/>
-            <img src="Images/dqs.jpeg" alt="Blossom Trail 2" class="slidesImage2"/>
-            <img src="Images/ryoshu.webp" alt="Blossom Trail 3" class="slidesImage2"/>
+            <img src="Images/btpile1.jpg" alt="Blossom Trail 1" class="slidesImage2 activeSlidesImage2"/>
+            <img src="Images/bthand1.jpg" alt="Blossom Trail 2" class="slidesImage2"/>
+            <img src="Images/bthand2.jpg" alt="Blossom Trail 3" class="slidesImage2"/>
           </div>
           <h3>Blossom Trail</h3>
-          <h4>Rp25.000</h4>
+          <h3>Rp25k</h3>
+          <h4>BUNDLE Rp20k</h4>
 
           <div class="itemCounters">
             <button type="button" class="buttonMinus" onclick="subtractBuyNumber('itemCounter2')">-</button>
@@ -98,12 +100,14 @@
 
         <div class="catalogueProduct">
           <div class="slidesContainer">
-            <img src="Images/dqs.jpeg" alt="Flower Buds 1" class="slidesImage3 activeSlidesImage3"/>
+            <img src="Images/fbhand1.jpg" alt="Flower Buds 1" class="slidesImage3 activeSlidesImage3"/>
             <img src="Images/ryoshu.webp" alt="Flower Buds 2" class="slidesImage3"/>
             <img src="Images/dqm.webp" alt="Flower Buds 3" class="slidesImage3"/>
           </div>
           <h3>Flower Buds</h3>
-          <h4>Rp20.000</h4>
+          <h3>Rp20k</h3>
+          <h4>BUNDLE Rp16k</h4>
+
           
           <div class="itemCounters">
             <button type="button" class="buttonMinus" onclick="subtractBuyNumber('itemCounter3')">-</button>
@@ -113,42 +117,14 @@
         </div>
       </div> <!--catalogue part 1 end-->
 
-
-
-      <div class="catalogue">
-        <div class="catalogueProduct">
-          <div class="slidesContainer">
-            <img src="Images/dqs.jpeg" alt="Couple 1" class="slidesImage4 activeSlidesImage4"/>
-            <img src="Images/ryoshu.webp" alt="Couple 2" class="slidesImage4"/>
-            <img src="Images/dqm.webp" alt="Couple 3" class="slidesImage4"/>
-          </div>
-          <h3>Couple</h3>
-          <h4>Rp50.000</h4>
-          
-          <div class="itemCounters">
-            <button type="button" class="buttonMinus" onclick="subtractBuyNumber('itemCounter4')">-</button>
-            <p id="itemCounter4" class="itemCounters">0</p>
-            <button type="button" class="buttonPlus" onclick="addBuyNumber('itemCounter4')">+</button>
-          </div>
-        </div>
-
-
-        <div class="catalogueProduct">
-          <div class="slidesContainer">
-            <img src="Images/dqs.jpeg" alt="Powerpuff Girls 1" class="slidesImage5 activeSlidesImage5"/>
-            <img src="Images/ryoshu.webp" alt="Powerpuff Girls 2" class="slidesImage5"/>
-            <img src="Images/dqm.webp" alt="Powerpuff Girls 3" class="slidesImage5"/>
-          </div>
-          <h3>Powerpuff Girls</h3>
-          <h4>Rp60.000</h4>
-          
-          <div class="itemCounters">
-            <button type="button" class="buttonMinus" onclick="subtractBuyNumber('itemCounter5')">-</button>
-            <p id="itemCounter5" class="itemCounters">0</p>
-            <button type="button" class="buttonPlus" onclick="addBuyNumber('itemCounter5')">+</button>
-          </div>
-        </div>
-      </div> <!--catalogue part 2 end-->
+      <div class="textBubble" style="margin-bottom: 3em;">
+        <h2>Buy our bundles for a better price!</h2>
+        <p>
+          <strong>Every pair of the same product receives a 20% discount!</strong> Please note that if you buy 
+          an odd number of the same product (3, 5, 7, etc.), the last item does not have a pair and it will 
+          <strong>not</strong> get a discount.
+        </p>
+      </div>
   
 
 
@@ -164,8 +140,9 @@
           <input type="text" name="price1" id="orderPrice1" style="display: none;" value="">
           <input type="text" name="price2" id="orderPrice2" style="display: none;" value="">
           <input type="text" name="price3" id="orderPrice3" style="display: none;" value="">
-          <input type="text" name="price4" id="orderPrice4" style="display: none;" value="">
-          <input type="text" name="price5" id="orderPrice5" style="display: none;" value="">
+          <input type="text" name="amount1" id="itemAmount1" style="display: none;" value="">
+          <input type="text" name="amount2" id="itemAmount2" style="display: none;" value="">
+          <input type="text" name="amount3" id="itemAmount3" style="display: none;" value="">
         </form>  
       </div>
     
@@ -204,13 +181,24 @@
 
 
     /*price calculator section*/
-    document.addEventListener('click', function () {
-      let price1 = document.getElementById('itemCounter1').textContent * 30000; //Heartstrings
-      let price2 = document.getElementById('itemCounter2').textContent * 25000; //Blossom Trail
-      let price3 = document.getElementById('itemCounter3').textContent * 20000; //Flower Buds
-      let price4 = document.getElementById('itemCounter4').textContent * 50000; //Couple
-      let price5 = document.getElementById('itemCounter5').textContent * 60000; //Powerpuff Girls
-      let totalPrice = price1 + price2 + price3 + price4 + price5;
+    function priceCalculator(variant, price, amount) {
+      let itemsBought = document.getElementById(variant).textContent;
+
+      document.getElementById(amount).setAttribute("value", itemsBought);
+      if (itemsBought % 2 == 1) {
+        return Math.trunc((itemsBought - 1) * 0.8 * price + price);
+      }
+      else {
+        return Math.trunc(itemsBought * 0.8 * price);
+      };
+    }
+
+    document.addEventListener('click', () => {
+      let price1 = priceCalculator("itemCounter1", 30000, "itemAmount1");
+      let price2 = priceCalculator("itemCounter2", 25000, "itemAmount2");
+      let price3 = priceCalculator("itemCounter3", 20000, "itemAmount3");
+      let totalPrice = price1 + price2 + price3;
+
       if (totalPrice > 0) {document.getElementById("totalPriceBar").style.display = "flex";}
       else {document.getElementById("totalPriceBar").style.display = "none";}
      
@@ -220,9 +208,7 @@
       document.getElementById("orderPrice1").setAttribute("value", price1);
       document.getElementById("orderPrice2").setAttribute("value", price2);
       document.getElementById("orderPrice3").setAttribute("value", price3);
-      document.getElementById("orderPrice4").setAttribute("value", price4);
-      document.getElementById("orderPrice5").setAttribute("value", price5);
-    }) 
+    })
 
 
 
