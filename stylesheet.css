@@ -18,7 +18,7 @@ div {
     padding: 0;
 }
 
-h1, h2, #aboutUs > p { /*general text subsection*/
+h1, h2, .textBubble > p { /*general text subsection*/
     color: #ce1c1c;
     text-align: center;
 }
@@ -82,14 +82,23 @@ button:hover, #submitButton:hover {
     z-index: 2;
 }
 
+#topBar > div {
+    height: fit-content;
+}
+
+#logoImage {
+    width: 100px;
+    margin: 0 30px 0 0;
+}
+
 #logo {
     display: inline-block;
     vertical-align: middle;
-    margin-left: 30px;
+    margin: 30px auto 30px auto;
     letter-spacing: 0.55em;
 }
 
-#topBar a {
+#topBar > a {
     float: right;
     text-align: center;
     margin-top: -15px;
@@ -100,10 +109,14 @@ button:hover, #submitButton:hover {
     justify-content: space-evenly;
 }
 
+#contactUs > h2 {
+    margin: 15px 0 10px 0;
+}
+
 /*about us section*/
-#aboutUs {
+.textBubble {
     width: 40%;
-    background-color: #ce1c1c25; /*#fff9f9*/
+    background-color: #f1c4c296;
     border-radius: 20px;
     padding: 2%;
     margin-top: 30px;
@@ -113,10 +126,14 @@ button:hover, #submitButton:hover {
     border: 0;
     background-color: #ffffff00;
     color: #ce1c1c;
+    text-decoration: underline;
+    font-style: italic;
 }
 
 #dropdownButton:hover {
     color: #551d1d;
+    text-decoration: none;
+    font-style: normal;
 }
 
 li {
@@ -220,7 +237,7 @@ form {
     padding: 10px;
     background-color: #f9b0b0;
     border-radius: 0 0 20px 20px;
-    width: 15%;
+    width: 200px;
     height: 10%;
 }
 
@@ -251,5 +268,19 @@ label {
 @media only screen and (max-width: 600px) {
     #topBar > div > img {
         display: none;
+    }
+
+    .textBubble {
+        width: 75%;
+        padding: 4%;
+    }
+
+    .catalogueProduct > h3, .catalogueProduct > h4 {
+        font-size: 80%;
+    }
+
+    #totalPriceBar {
+        justify-content: center;
+        padding: 0;
     }
 }
