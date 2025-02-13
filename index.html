@@ -139,6 +139,7 @@
           <input type="submit" value="Submit!" id="submitButton" style="display: block;">
           
           <input type="text" name="totalprice" id="totalOrderPrice" style="display: none;" value="">
+          <input type="text" name="totalpriceND" id="totalOrderPriceND" style="display: none;" value="">
           <input type="text" name="price1" id="orderPrice1" style="display: none;" value="">
           <input type="text" name="price2" id="orderPrice2" style="display: none;" value="">
           <input type="text" name="price3" id="orderPrice3" style="display: none;" value="">
@@ -201,12 +202,18 @@
       let price3 = priceCalculator("itemCounter3", 20000, "itemAmount3");
       let totalPrice = price1 + price2 + price3;
 
+      let price1ND = document.getElementById("itemCounter1").textContent * 30000;
+      let price2ND = document.getElementById("itemCounter2").textContent * 25000;
+      let price3ND = document.getElementById("itemCounter3").textContent * 20000;
+      let totalPriceND = price1ND + price2ND + price3ND;
+
       if (totalPrice > 0) {document.getElementById("totalPriceBar").style.display = "flex";}
       else {document.getElementById("totalPriceBar").style.display = "none";}
      
-      document.getElementById("totalPriceNumber").textContent = ("Your total price is Rp" + totalPrice);
+      document.getElementById("totalPriceNumber").textContent = ("Your total price is Rp" + totalPrice + " / Rp" + totalPriceND);
 
       document.getElementById("totalOrderPrice").setAttribute("value", totalPrice);
+      document.getElementById("totalOrderPriceND").setAttribute("value", totalPriceND);
       document.getElementById("orderPrice1").setAttribute("value", price1);
       document.getElementById("orderPrice2").setAttribute("value", price2);
       document.getElementById("orderPrice3").setAttribute("value", price3);
