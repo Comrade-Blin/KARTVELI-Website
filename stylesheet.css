@@ -86,11 +86,6 @@ button:hover, #submitButton:hover {
     height: fit-content;
 }
 
-#logoImage {
-    width: 100px;
-    margin: 0 30px 0 0;
-}
-
 #logo {
     display: inline-block;
     vertical-align: middle;
