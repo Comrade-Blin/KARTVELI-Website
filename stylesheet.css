@@ -158,7 +158,6 @@ li > strong {
 
 /*slideshow part*/
 .slidesContainer {
-    visibility: visible;
     height: 20vw;
     overflow: hidden;
     position: relative;
